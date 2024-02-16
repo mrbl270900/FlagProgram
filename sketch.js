@@ -105,7 +105,7 @@ function drawFormationFromString(inputString) {
   }
 
   if (array.length > 5) {
-    ekstra = array[5][0];
+    ekstra = array[5];
   }
 
   drawformation(
@@ -229,39 +229,39 @@ function drawformation(
     drawPlayerAndRoute(12.5, 25, route3, route3Q, route3L);
     fill(color(255, 204, 0));
     drawPlayerAndRoute(10, 32, "R", route4Q, route4L);
-    
+
     let done = false;
-    
-    if(route4Q == "L"){
-       route(10, 25, route4, null, route4L);
-        done = true;
-       }
-    if(route4Q == "R"){
-       route(15, 25, route4, null, route4L);
-        done = true;
-       }
-    if(done == false){
-       route(15, 25, route4, null, route4L);
-       }
+
+    if (route4Q == "L") {
+      route(10, 25, route4, null, route4L);
+      done = true;
+    }
+    if (route4Q == "R") {
+      route(15, 25, route4, null, route4L);
+      done = true;
+    }
+    if (done == false) {
+      route(15, 25, route4, null, route4L);
+    }
   }
   if (formation == "RR") {
     fill(color(255, 0, 0));
     drawPlayerAndRoute(10, 32, "R", route1Q, route1L);
-    
+
     let done = false;
-    
-    if(route1Q == "L"){
-       route(10, 25, route1, null, route1L);
-        done = true;
-       }
-    if(route1Q == "R"){
-       route(15, 25, route1, null, route1L);
-        done = true;
-       }
-    if(done == false){
-       route(15, 25, route1, null, route1L);
-       }
-    
+
+    if (route1Q == "L") {
+      route(10, 25, route1, null, route1L);
+      done = true;
+    }
+    if (route1Q == "R") {
+      route(15, 25, route1, null, route1L);
+      done = true;
+    }
+    if (done == false) {
+      route(15, 25, route1, null, route1L);
+    }
+
     fill(color(0, 255, 0));
     drawPlayerAndRoute(12.5, 25, route2, route2Q, route2L);
     fill(color(0, 100, 200));
@@ -276,24 +276,25 @@ function drawformation(
     drawPlayerAndRoute(12.5, 25, route2, route2Q, route2L);
     fill(color(0, 100, 200));
     drawPlayerAndRoute(12.5, 33, "R", route3Q, null);
-    
+
     let done = false;
-    
-    if(route3Q == "L"){
-       route(9.70, 25.35, route3, null, route3L);
-        done = true;
-       }
-    if(route3Q == "R"){
-       route(15.30, 25.35, route3, null, route3L);
-        done = true;
-       }
-    if(done == false){
-       route(15.30, 25.35, route3, null, route3L);
-       }
-    
+
+    if (route3Q == "L") {
+      route(9.7, 25.35, route3, null, route3L);
+      done = true;
+    }
+    if (route3Q == "R") {
+      route(15.3, 25.35, route3, null, route3L);
+      done = true;
+    }
+    if (done == false) {
+      route(15.3, 25.35, route3, null, route3L);
+    }
+
     fill(color(255, 204, 0));
     drawPlayerAndRoute(22, 25, route4, route4Q, route4L);
   }
+
   if (ekstra == null) {
     fill(color(0, 0, 0));
     drawPlayer(12.5, 31);
@@ -302,13 +303,31 @@ function drawformation(
     fill(color(0, 0, 0));
     drawPlayer(12.5, 28);
   }
-  if (ekstra == "R") {
+  if (ekstra == "RS") {
     fill(color(0, 0, 0));
     drawPlayer(12.5, 31);
+    let oldI = 12.5;
+    for (let i = 12.5; i < 19; i = i + 1) {
+      if (oldI + 2 == i) {
+        oldI = oldI + 1;
+        line(oldI * scaleGame, 26 * scaleGame, i * scaleGame, 26 * scaleGame);
+        oldI = i;
+      }
+    }
+    line(19 * scaleGame, 26 * scaleGame, 12.5 * scaleGame, 31 * scaleGame);
   }
-  if (ekstra == "L") {
+  if (ekstra == "LS") {
     fill(color(0, 0, 0));
     drawPlayer(12.5, 31);
+    let oldI = 12.5;
+    for (let i = 12.5; i > 6; i = i - 1) {
+      if (oldI - 2 == i) {
+        oldI = oldI - 1;
+        line(oldI * scaleGame, 26 * scaleGame, i * scaleGame, 26 * scaleGame);
+        oldI = i;
+      }
+    }
+    line(6 * scaleGame, 26 * scaleGame, 12.5 * scaleGame, 31 * scaleGame);
   }
 }
 
@@ -738,13 +757,13 @@ function route(x, y, route, otherSide, rLenghts) {
         done = true;
       }
       if (done == false) {
-          line(
-            getEndRouteX(x, y, 315, 0, 4),
-            getEndRouteY(x, y, 315, 0, 4),
-            getEndRouteX(x, y, 315, 0, 4),
-            getEndRouteY(x, y, 315, 0, 4) - 5 * scaleGame
-          );
-          drawRoute(x, y, 315, 0, 4);
+        line(
+          getEndRouteX(x, y, 315, 0, 4),
+          getEndRouteY(x, y, 315, 0, 4),
+          getEndRouteX(x, y, 315, 0, 4),
+          getEndRouteY(x, y, 315, 0, 4) - 5 * scaleGame
+        );
+        drawRoute(x, y, 315, 0, 4);
       }
     }
     if (x > 12.5) {
@@ -757,7 +776,7 @@ function route(x, y, route, otherSide, rLenghts) {
         done = true;
       }
       if (done == false) {
-          drawRoute(x, y, 225, -2, 7);
+        drawRoute(x, y, 225, -2, 7);
       }
     }
     if (x < 12.5) {
@@ -770,7 +789,7 @@ function route(x, y, route, otherSide, rLenghts) {
         done = true;
       }
       if (done == false) {
-          drawRoute(x, y, 315, -2, 7);
+        drawRoute(x, y, 315, -2, 7);
       }
     }
   }
