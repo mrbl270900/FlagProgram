@@ -104,6 +104,11 @@ function drawFormationFromString(inputString) {
       array[4] = array[4][0];
     }
   }
+  
+  if(array.length > 5){
+     ekstra = array[5][0];
+     }
+  
 
   drawformation(
     array[0],
@@ -253,7 +258,7 @@ function drawformation(
   }
   if (ekstra == "U") {
     fill(color(0, 0, 0));
-    drawPlayer(12.5, 27);
+    drawPlayer(12.5, 28);
   }
   if (ekstra == "R") {
     fill(color(0, 0, 0));
@@ -313,9 +318,9 @@ function route(x, y, route, otherSide, rLenghts) {
     }
     if (done == false) {
       if (x > 12.5) {
-        drawRoute(x, y, 45, -rLenghts, 1);
-      } else {
         drawRoute(x, y, 135, -rLenghts, 1);
+      } else {
+        drawRoute(x, y, 45, -rLenghts, 1);
       }
     }
   }
@@ -396,9 +401,9 @@ function route(x, y, route, otherSide, rLenghts) {
     }
     if (done == false) {
       if (x > 12.5) {
-        drawRoute(x, y, 45, -rLenghts, 1);
-      } else {
         drawRoute(x, y, 135, -rLenghts, 1);
+      } else {
+        drawRoute(x, y, 45, -rLenghts, 1);
       }
     }
   }
