@@ -43,33 +43,32 @@ function drawFormationFromString(inputString) {
   let route3L = null;
   let route4L = null;
   let ekstra = null;
-  
+
   if (array[1][1] !== null) {
     if (array[1][1] == "L" || array[1][1] == "R") {
       route1Q = array[1][1];
-      if(array[1][2] !== null){
-         route1L = array[1][2];
-         array[1] = array[1][0];
-         }else{
-           array[1] = array[1][0];
-         }
-    }else{
+      if (array[1][2] !== null) {
+        route1L = array[1][2];
+        array[1] = array[1][0];
+      } else {
+        array[1] = array[1][0];
+      }
+    } else {
       route1L = array[1][1];
       array[1] = array[1][0];
     }
   }
-  
-  
+
   if (array[2][1] !== null) {
     if (array[2][1] == "L" || array[2][1] == "R") {
       route2Q = array[2][1];
-      if(array[2][2] !== null){
-         route2L = array[2][2];
-         array[2] = array[2][0];
-         }else{
-           array[2] = array[2][0];
-         }
-    }else{
+      if (array[2][2] !== null) {
+        route2L = array[2][2];
+        array[2] = array[2][0];
+      } else {
+        array[2] = array[2][0];
+      }
+    } else {
       route2L = array[2][1];
       array[2] = array[2][0];
     }
@@ -78,37 +77,36 @@ function drawFormationFromString(inputString) {
   if (array[3][1] !== null) {
     if (array[3][1] == "L" || array[3][1] == "R") {
       route3Q = array[3][1];
-      if(array[3][2] !== null){
-         route3L = array[3][2];
-         array[3] = array[3][0];
-         }else{
-           array[3] = array[3][0];
-         }
-    }else{
+      if (array[3][2] !== null) {
+        route3L = array[3][2];
+        array[3] = array[3][0];
+      } else {
+        array[3] = array[3][0];
+      }
+    } else {
       route3L = array[3][1];
       array[3] = array[3][0];
     }
   }
-  
+
   if (array[4][1] !== null) {
     if (array[4][1] == "L" || array[4][1] == "R") {
       route4Q = array[4][1];
-      if(array[4][2] !== null){
-         route4L = array[4][2];
-         array[4] = array[4][0];
-         }else{
-           array[4] = array[4][0];
-         }
-    }else{
+      if (array[4][2] !== null) {
+        route4L = array[4][2];
+        array[4] = array[4][0];
+      } else {
+        array[4] = array[4][0];
+      }
+    } else {
       route4L = array[4][1];
       array[4] = array[4][0];
     }
   }
-  
-  if(array.length > 5){
-     ekstra = array[5][0];
-     }
-  
+
+  if (array.length > 5) {
+    ekstra = array[5][0];
+  }
 
   drawformation(
     array[0],
@@ -162,94 +160,138 @@ function drawformation(
   route4L,
   ekstra
 ) {
-  if (formation == "R") {
-    fill(color(255, 204, 0));
-    drawPlayerAndRoute(3, 25, route1, route1Q, route1L);
-    fill(color(0, 100, 200));
-    drawPlayerAndRoute(6, 25, route2, route2Q, route2L);
-    fill(color(0, 255, 0));
-    drawPlayerAndRoute(12.5, 25, route3, route3Q, route3L);
-    fill(color(255, 0, 0));
-    drawPlayerAndRoute(22, 25, route4, route4Q, route4L);
-  }
   if (formation == "L") {
-    fill(color(255, 204, 0));
-    drawPlayerAndRoute(3, 25, route1, route1Q, route1L);
-    fill(color(0, 100, 200));
-    drawPlayerAndRoute(12.5, 25, route2, route2Q, route2L);
-    fill(color(0, 255, 0));
-    drawPlayerAndRoute(19, 25, route3, route3Q, route3L);
     fill(color(255, 0, 0));
+    drawPlayerAndRoute(3, 25, route1, route1Q, route1L);
+    fill(color(0, 255, 0));
+    drawPlayerAndRoute(6, 25, route2, route2Q, route2L);
+    fill(color(0, 100, 200));
+    drawPlayerAndRoute(12.5, 25, route3, route3Q, route3L);
+    fill(color(255, 204, 0));
     drawPlayerAndRoute(22, 25, route4, route4Q, route4L);
   }
-  if (formation == "RT") {
-    fill(color(255, 204, 0));
-    drawPlayerAndRoute(3, 27, route1, route1Q, route1L);
-    fill(color(0, 100, 200));
-    drawPlayerAndRoute(5, 25, route2, route2Q, route2L);
-    fill(color(0, 255, 0));
-    drawPlayerAndRoute(7, 27, route3, route3Q, route3L);
+  if (formation == "R") {
     fill(color(255, 0, 0));
-    drawPlayerAndRoute(12.5, 25, route4, route4Q, route4L);
+    drawPlayerAndRoute(3, 25, route1, route1Q, route1L);
+    fill(color(0, 255, 0));
+    drawPlayerAndRoute(12.5, 25, route2, route2Q, route2L);
+    fill(color(0, 100, 200));
+    drawPlayerAndRoute(19, 25, route3, route3Q, route3L);
+    fill(color(255, 204, 0));
+    drawPlayerAndRoute(22, 25, route4, route4Q, route4L);
   }
   if (formation == "LT") {
-    fill(color(255, 204, 0));
-    drawPlayerAndRoute(12.5, 25, route1, route1Q, route1L);
-    fill(color(0, 100, 200));
-    drawPlayerAndRoute(18, 27, route2, route2Q, route2L);
-    fill(color(0, 255, 0));
-    drawPlayerAndRoute(20, 25, route3, route3Q, route3L);
     fill(color(255, 0, 0));
+    drawPlayerAndRoute(3, 27, route1, route1Q, route1L);
+    fill(color(0, 255, 0));
+    drawPlayerAndRoute(5, 25, route2, route2Q, route2L);
+    fill(color(0, 100, 200));
+    drawPlayerAndRoute(7, 27, route3, route3Q, route3L);
+    fill(color(255, 204, 0));
+    drawPlayerAndRoute(12.5, 25, route4, route4Q, route4L);
+  }
+  if (formation == "RT") {
+    fill(color(255, 0, 0));
+    drawPlayerAndRoute(12.5, 25, route1, route1Q, route1L);
+    fill(color(0, 255, 0));
+    drawPlayerAndRoute(18, 27, route2, route2Q, route2L);
+    fill(color(0, 100, 200));
+    drawPlayerAndRoute(20, 25, route3, route3Q, route3L);
+    fill(color(255, 204, 0));
     drawPlayerAndRoute(22, 27, route4, route4Q, route4L);
   }
-  if (formation == "RB") {
-    fill(color(255, 204, 0));
-    drawPlayerAndRoute(3, 25, route1, route1Q, route1L);
-    fill(color(0, 100, 200));
-    drawPlayerAndRoute(10, 25, route2, route2Q, route2L);
-    fill(color(0, 255, 0));
-    drawPlayerAndRoute(12.5, 25, route3, route3Q, route3L);
+  if (formation == "LB") {
     fill(color(255, 0, 0));
+    drawPlayerAndRoute(3, 25, route1, route1Q, route1L);
+    fill(color(0, 255, 0));
+    drawPlayerAndRoute(10, 25, route2, route2Q, route2L);
+    fill(color(0, 100, 200));
+    drawPlayerAndRoute(12.5, 25, route3, route3Q, route3L);
+    fill(color(255, 204, 0));
     drawPlayerAndRoute(15, 25, route4, route4Q, route4L);
   }
-  if (formation == "LB") {
-    fill(color(255, 204, 0));
-    drawPlayerAndRoute(10, 25, route1, route1Q, route1L);
-    fill(color(0, 100, 200));
-    drawPlayerAndRoute(12.5, 25, route2, route2Q, route2L);
-    fill(color(0, 255, 0));
-    drawPlayerAndRoute(15, 25, route3, route3Q, route3L);
+  if (formation == "RB") {
     fill(color(255, 0, 0));
+    drawPlayerAndRoute(10, 25, route1, route1Q, route1L);
+    fill(color(0, 255, 0));
+    drawPlayerAndRoute(12.5, 25, route2, route2Q, route2L);
+    fill(color(0, 100, 200));
+    drawPlayerAndRoute(15, 25, route3, route3Q, route3L);
+    fill(color(255, 204, 0));
     drawPlayerAndRoute(22, 25, route4, route4Q, route4L);
   }
-  if (formation == "RR") {
-    fill(color(255, 204, 0));
-    drawPlayerAndRoute(3, 25, route1, route1Q, route1L);
-    fill(color(0, 100, 200));
-    drawPlayerAndRoute(6, 25, route2, route2Q, route2L);
-    fill(color(0, 255, 0));
-    drawPlayerAndRoute(12.5, 25, route3, route3Q, route3L);
-    fill(color(255, 0, 0));
-    drawPlayerAndRoute(15, 32, route4, route4Q, route4L);
-  }
   if (formation == "LR") {
-    fill(color(255, 204, 0));
-    drawPlayerAndRoute(10, 32, route1, route1Q, route1L);
-    fill(color(0, 100, 200));
-    drawPlayerAndRoute(12.5, 25, route2, route2Q, route2L);
-    fill(color(0, 255, 0));
-    drawPlayerAndRoute(19, 25, route3, route3Q, route3L);
     fill(color(255, 0, 0));
+    drawPlayerAndRoute(3, 25, route1, route1Q, route1L);
+    fill(color(0, 225, 0));
+    drawPlayerAndRoute(6, 25, route2, route2Q, route2L);
+    fill(color(0, 100, 200));
+    drawPlayerAndRoute(12.5, 25, route3, route3Q, route3L);
+    fill(color(255, 204, 0));
+    drawPlayerAndRoute(10, 32, "R", route4Q, route4L);
+    
+    let done = false;
+    
+    if(route4Q == "L"){
+       route(10, 25, route4, null, route4L);
+        done = true;
+       }
+    if(route4Q == "R"){
+       route(15, 25, route4, null, route4L);
+        done = true;
+       }
+    if(done == false){
+       route(15, 25, route4, null, route4L);
+       }
+  }
+  if (formation == "RR") {
+    fill(color(255, 0, 0));
+    drawPlayerAndRoute(10, 32, "R", route1Q, route1L);
+    
+    let done = false;
+    
+    if(route1Q == "L"){
+       route(10, 25, route1, null, route1L);
+        done = true;
+       }
+    if(route1Q == "R"){
+       route(15, 25, route1, null, route1L);
+        done = true;
+       }
+    if(done == false){
+       route(15, 25, route1, null, route1L);
+       }
+    
+    fill(color(0, 255, 0));
+    drawPlayerAndRoute(12.5, 25, route2, route2Q, route2L);
+    fill(color(0, 100, 200));
+    drawPlayerAndRoute(19, 25, route3, route3Q, route3L);
+    fill(color(255, 204, 0));
     drawPlayerAndRoute(22, 25, route4, route4Q, route4L);
   }
   if (formation == "WR") {
-    fill(color(255, 204, 0));
-    drawPlayerAndRoute(3, 25, route1, route1Q, route1L);
-    fill(color(0, 100, 200));
-    drawPlayerAndRoute(12.5, 25, route2, route2Q, route2L);
-    fill(color(0, 255, 0));
-    drawPlayerAndRoute(12.5, 33, route3, route3Q, route3L);
     fill(color(255, 0, 0));
+    drawPlayerAndRoute(3, 25, route1, route1Q, route1L);
+    fill(color(0, 255, 0));
+    drawPlayerAndRoute(12.5, 25, route2, route2Q, route2L);
+    fill(color(0, 100, 200));
+    drawPlayerAndRoute(12.5, 33, "R", route3Q, null);
+    
+    let done = false;
+    
+    if(route3Q == "L"){
+       route(9.70, 25.35, route3, null, route3L);
+        done = true;
+       }
+    if(route3Q == "R"){
+       route(15.30, 25.35, route3, null, route3L);
+        done = true;
+       }
+    if(done == false){
+       route(15.30, 25.35, route3, null, route3L);
+       }
+    
+    fill(color(255, 204, 0));
     drawPlayerAndRoute(22, 25, route4, route4Q, route4L);
   }
   if (ekstra == null) {
@@ -669,6 +711,66 @@ function route(x, y, route, otherSide, rLenghts) {
           getEndRouteX(x, y, 315, -rLenghts, 3) - 7 * scaleGame,
           getEndRouteY(x, y, 315, -rLenghts, 3)
         );
+      }
+    }
+  }
+
+  if (route == "R") {
+    if (x == 12.5) {
+      if (otherSide == "R") {
+        drawRoute(x, y, 315, 0, 4);
+        line(
+          getEndRouteX(x, y, 315, 0, 4),
+          getEndRouteY(x, y, 315, 0, 4),
+          getEndRouteX(x, y, 315, 0, 4),
+          getEndRouteY(x, y, 315, 0, 4) - 5 * scaleGame
+        );
+        done = true;
+      }
+      if (otherSide == "L") {
+        drawRoute(x, y, 225, 0, 4);
+        line(
+          getEndRouteX(x, y, 225, 0, 4),
+          getEndRouteY(x, y, 225, 0, 4),
+          getEndRouteX(x, y, 225, 0, 4),
+          getEndRouteY(x, y, 225, 0, 4) - 5 * scaleGame
+        );
+        done = true;
+      }
+      if (done == false) {
+          line(
+            getEndRouteX(x, y, 315, 0, 4),
+            getEndRouteY(x, y, 315, 0, 4),
+            getEndRouteX(x, y, 315, 0, 4),
+            getEndRouteY(x, y, 315, 0, 4) - 5 * scaleGame
+          );
+          drawRoute(x, y, 315, 0, 4);
+      }
+    }
+    if (x > 12.5) {
+      if (otherSide == "R") {
+        drawRoute(x, y, 270, -7, 0);
+        done = true;
+      }
+      if (otherSide == "L") {
+        drawRoute(x, y, 225, -2, 7);
+        done = true;
+      }
+      if (done == false) {
+          drawRoute(x, y, 225, -2, 7);
+      }
+    }
+    if (x < 12.5) {
+      if (otherSide == "R") {
+        drawRoute(x, y, 315, -2, 7);
+        done = true;
+      }
+      if (otherSide == "L") {
+        drawRoute(x, y, 270, -7, 0);
+        done = true;
+      }
+      if (done == false) {
+          drawRoute(x, y, 315, -2, 7);
       }
     }
   }
